@@ -1,6 +1,5 @@
 package net.javaguides.springboot.model;
 
-import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,22 +9,22 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
-@Entity	
-@Table(name="employees")
-
-public class Employee {
-	
+@Entity
+@Table(name = "products")
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name = "first_name", nullable = false) 
-	private String first_name;
-	
-	@Column(name = "last_name", nullable = false)
-	private String last_name;
-	
-	@Column(name = "email", nullable = true)
-	private String email;
-	
+
+	@Column(name = "codName", nullable = false)
+	private String codName;
+
+	@Column(name = "productName", nullable = false)
+	private String productName;
+
+	@Column(name = "quantity", nullable = true)
+	private int quantity;
+
+	@Column(name = "price", nullable = true)
+	private double price;
 }
